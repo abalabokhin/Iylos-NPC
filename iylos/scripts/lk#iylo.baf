@@ -359,6 +359,18 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("LK#IylosLeila","GLOBAL",1)
+END
+
+IF
+    CombatCounter(0)
+    !See([ENEMY])
+    InMyArea("AMwenc01") 
+    Range("AMwenc01",30) 
+    InParty("Iylos") 
+    Global("LK#IylosLeila","GLOBAL",1)
+    !StateCheck("Iylos",CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
     MoveToObject("AMwenc01")
     StartDialogueNoSet("AMwenc01")
 END
